@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Borrowing System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            margin: 0;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        label {
+            font-size: 16px;
+            margin-bottom: 10px;
+            display: block;
+        }
+        input[type="text"], input[type="number"], input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .books {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .book-option {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 150px;
+            margin: 10px;
+            text-align: center;
+        }
+        .books img {
+            width: 104px;
+            height: 142px;
+            margin-bottom: 5px;
+        }
+        input[type="radio"] {
+            margin-top: 5px;
+        }
+        input[type="submit"], .back-button, .logout-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            width: 100%;
+            margin-top: 10px;
+        }
+        input[type="submit"]:hover, .back-button:hover, .logout-button:hover {
+            background-color: #0056b3;
+        }
+        a {
+            display: inline-block;
+            text-decoration: none;
+            color: #007bff;
+            font-size: 16px;
+            transition: color 0.3s;
+            text-align: center;
+            width: 100%;
+        }
+        a:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Book Borrowing System</h1>
+
+        <form action="process.php" method="post">
+            <div class="books">
+                <div class="book-option">
+                    <img src="Book 1.png" alt="Philosopher's Stone">
+                    <label for="Philosopher">Philosopher's Stone</label>
+                    <input type="radio" id="Philosopher" name="book" value="Philosopher's Stone" required>
+                </div>
+                <div class="book-option">
+                    <img src="Book 2.AVIF" alt="ABDF">
+                    <label for="ABDF">ABDF</label>
+                    <input type="radio" id="ABDF" name="book" value="ABDF" required>
+                </div>
+                <div class="book-option">
+                    <img src="Book 3.AVIF" alt="Thrones">
+                    <label for="Thrones">Thrones</label>
+                    <input type="radio" id="Thrones" name="book" value="Thrones" required>
+                </div>
+                <div class="book-option">
+                    <img src="Book 4.AVIF" alt="Fire">
+                    <label for="Fire">Fire</label>
+                    <input type="radio" id="Fire" name="book" value="Fire" required>
+                </div>
+                <div class="book-option">
+                    <img src="Book 5.AVIF" alt="ok">
+                    <label for="ok">ok</label>
+                    <input type="radio" id="ok" name="book" value="ok" required>
+                </div>
+                <div class="book-option">
+                    <img src="Book 6.AVIF" alt="Goblet">
+                    <label for="Goblet">Goblet</label>
+                    <input type="radio" id="Goblet" name="book" value="Goblet" required>
+                </div>
+            </div>
+
+            <label for="studentname">Student Name:</label>
+            <input type="text" id="studentname" name="studentname" required>
+
+            <label for="studentid">Student ID:</label>
+            <input type="number" id="studentid" name="studentid" required>
+
+            <label for="borrowdate">Borrowing Date:</label>
+            <input type="date" id="borrowdate" name="borrowdate" required>
+
+            <label for="returndate">Return Date:</label>
+            <input type="date" id="returndate" name="returndate" required>
+
+            <input type="submit" name="submit" value="Submit">
+        </form>
+
+        <!-- Back Button -->
+        <button class="back-button" onclick="window.history.back();">Back</button>
+
+        <!-- Logout Button -->
+        <form action="logout.php" method="post" style="margin-top: 20px;">
+            <button type="submit" class="logout-button">Logout</button>
+        </form>
+    </div>
+</body>
+</html>
